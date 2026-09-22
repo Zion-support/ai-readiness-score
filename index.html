@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Readiness Assessment — Zion Tech Group</title>
+<meta name="description" content="AI readiness assessment tool. Evaluate your organization's AI maturity, identify gaps, and get an implementation roadmap.">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #0a0a0a; color: #e0e0e0; padding: 2rem; max-width: 900px; margin: 0 auto; }
+h1 { color: #00d4ff; margin-bottom: 0.5rem; }
+h2 { color: #8b8b8b; margin: 1.5rem 0 0.5rem; }
+.subtitle { color: #888; margin-bottom: 2rem; }
+.card { background: #141414; border: 1px solid #222; border-radius: 12px; padding: 1.5rem; margin: 1rem 0; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin: 1rem 0; }
+.input-group { margin: 0.5rem 0; }
+label { display: block; color: #aaa; font-size: 0.85rem; margin-bottom: 0.25rem; }
+input, select { width: 100%; padding: 0.5rem; background: #1a1a1a; border: 1px solid #333; border-radius: 6px; color: #fff; font-size: 1rem; }
+button { background: #00d4ff; color: #000; border: none; padding: 0.75rem 2rem; border-radius: 8px; font-size: 1rem; cursor: pointer; font-weight: 600; margin: 1rem 0.5rem 0 0; }
+button:hover { background: #00b8e6; }
+.result { background: #0d2818; border: 1px solid #00d4ff; border-radius: 12px; padding: 1.5rem; margin: 1rem 0; }
+.result h3 { color: #00d4ff; margin-bottom: 0.5rem; }
+.score { font-size: 3rem; font-weight: bold; text-align: center; margin: 1rem 0; }
+.score-high { color: #00d4ff; }
+.score-med { color: #ffd400; }
+.score-low { color: #ff4444; }
+table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+th, td { text-align: left; padding: 0.75rem; border-bottom: 1px solid #222; }
+th { color: #00d4ff; font-size: 0.85rem; text-transform: uppercase; }
+.badge { display: inline-block; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600; }
+.badge-green { background: #0d2818; color: #00d4ff; }
+.badge-yellow { background: #2a2a0a; color: #ffd400; }
+.badge-red { background: #2a0a0a; color: #ff4444; }
+a { color: #00d4ff; text-decoration: none; }
+.nav { display: flex; gap: 1rem; margin-bottom: 2rem; flex-wrap: wrap; }
+.nav a { padding: 0.5rem 1rem; background: #141414; border-radius: 8px; font-size: 0.9rem; }
+.footer { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid #222; color: #666; font-size: 0.85rem; }
+</style>
+</head>
+<body>
+<div class="nav">
+  <a href="https://ziontechgroup.com">🏠 Zion Tech Group</a>
+  <a href="https://ziontechgroup.com/apps/">📱 Apps</a>
+  <a href="https://ziontechgroup.com/services/">🛠️ Services</a>
+  <a href="https://ziontechgroup.com/en/plans/">💰 Plans</a>
+</div>
+
+<h1>🧠 AI Readiness Assessment</h1>
+<p class="subtitle">Evaluate your organization's AI maturity and get a gap analysis roadmap</p>
+
+<div class="card">
+  <h2>Organization Profile</h2>
+  <div class="grid">
+    <div class="input-group">
+      <label>Company Size</label>
+      <select id="size">
+        <option value="1-10">1-10 employees</option>
+        <option value="11-50">11-50 employees</option>
+        <option value="51-200" selected>51-200 employees</option>
+        <option value="201-1000">201-1000 employees</option>
+        <option value="1000+">1000+ employees</option>
+      </select>
+    </div>
+    <div class="input-group">
+      <label>Industry</label>
+      <select id="industry">
+        <option value="tech">Technology</option>
+        <option value="finance">Financial Services</option>
+        <option value="healthcare">Healthcare</option>
+        <option value="retail">Retail/E-Commerce</option>
+        <option value="manufacturing">Manufacturing</option>
+        <option value="other">Other</option>
+      </select>
+    </div>
+    <div class="input-group">
+      <label>Current AI Usage</label>
+      <select id="currentAI">
+        <option value="none">None</option>
+        <option value="basic">Basic (ChatGPT, simple tools)</option>
+        <option value="intermediate">Intermediate (custom models, automation)</option>
+        <option value="advanced">Advanced (ML ops, custom AI)</option>
+      </select>
+    </div>
+  </div>
+  
+  <h2>Readiness Factors (1-5 scale)</h2>
+  <div class="grid">
+    <div class="input-group">
+      <label>Data Quality & Availability</label>
+      <select id="data">
+        <option value="1">1 - Poor/Unstructured</option>
+        <option value="2">2 - Some structured data</option>
+        <option value="3">3 - Good data governance</option>
+        <option value="4">4 - Clean, labeled datasets</option>
+        <option value="5">5 - Enterprise data platform</option>
+      </select>
+    </div>
+    <div class="input-group">
+      <label>Technical Infrastructure</label>
+      <select id="tech">
+        <option value="1">1 - Legacy systems</option>
+        <option value="2">2 - Basic cloud</option>
+        <option value="3">3 - Modern cloud native</option>
+        <option value="4">4 - Hybrid cloud + edge</option>
+        <option value="5">5 - Full AI infrastructure</option>
+      </select>
+    </div>
+    <div class="input-group">
+      <label>Team AI Skills</label>
+      <select id="skills">
+        <option value="1">1 - No AI skills</option>
+        <option value="2">2 - Some training</option>
+        <option value="3">3 - Dedicated ML team</option>
+        <option value="4">4 - Experienced data scientists</option>
+        <option value="5">5 - AI-native organization</option>
+      </select>
+    </div>
+    <div class="input-group">
+      <label>Leadership Buy-in</label>
+      <select id="leadership">
+        <option value="1">1 - No support</option>
+        <option value="2">2 - Curious but cautious</option>
+        <option value="3">3 - Active pilot programs</option>
+        <option value="4">4 - Strategic AI investment</option>
+        <option value="5">5 - AI-first culture</option>
+      </select>
+    </div>
+    <div class="input-group">
+      <label>Budget for AI</label>
+      <select id="budget">
+        <option value="1">1 - No budget</option>
+        <option value="2">2 - Small pilot budget</option>
+        <option value="3">3 - Annual AI budget</option>
+        <option value="4">4 - Significant investment</option>
+        <option value="5">5 - Unlimited resources</option>
+      </select>
+    </div>
+  </div>
+  
+  <button onclick="assess()">Run Assessment</button>
+  <button onclick="reset()">Reset</button>
+</div>
+
+<div id="results" class="result" style="display:none;">
+  <h3>📊 AI Maturity Score</h3>
+  <div id="score" class="score"></div>
+  <div id="rating"></div>
+  <h3>🔍 Gap Analysis</h3>
+  <div id="gaps"></div>
+  <h3>🚀 Implementation Roadmap</h3>
+  <div id="roadmap"></div>
+  <h3>💰 Estimated Investment</h3>
+  <div id="investment"></div>
+</div>
+
+<div class="card">
+  <h2>AI Maturity Stages</h2>
+  <table>
+    <tr><th>Stage</th><th>Score</th><th>Characteristics</th></tr>
+    <tr><td>Awareness</td><td>0-20</td><td>Exploring AI, no formal strategy</td></tr>
+    <tr><td>Experimentation</td><td>21-40</td><td>Pilot projects, limited scale</td></tr>
+    <tr><td>Integration</td><td>41-60</td><td>AI in production workflows</td></tr>
+    <tr><td>Optimization</td><td>61-80</td><td>ML ops, continuous improvement</td></tr>
+    <tr><td>Transformation</td><td>81-100</td><td>AI-native, competitive advantage</td></tr>
+  </table>
+</div>
+
+<div class="footer">
+  <p>Zion Tech Group · <a href="https://ziontechgroup.com/en/plans/">Plans from $99</a> · <a href="https://ziontechgroup.com/discovery/">Free Discovery</a></p>
+  <p>⭐ 99.97% SLA · 🔒 SOC 2 Compliant · ☎ +1 302 464 0950</p>
+</div>
+
+<script>
+function assess() {
+  const size = document.getElementById('size').value;
+  const industry = document.getElementById('industry').value;
+  const currentAI = document.getElementById('currentAI').value;
+  const data = parseInt(document.getElementById('data').value);
+  const tech = parseInt(document.getElementById('tech').value);
+  const skills = parseInt(document.getElementById('skills').value);
+  const leadership = parseInt(document.getElementById('leadership').value);
+  const budget = parseInt(document.getElementById('budget').value);
+  
+  const avgScore = (data + tech + skills + leadership + budget) / 5;
+  const score = Math.round(avgScore * 20);
+  
+  let rating, colorClass;
+  if (score >= 80) { rating = 'Transformation'; colorClass = 'score-high'; }
+  else if (score >= 60) { rating = 'Optimization'; colorClass = 'score-high'; }
+  else if (score >= 40) { rating = 'Integration'; colorClass = 'score-med'; }
+  else if (score >= 20) { rating = 'Experimentation'; colorClass = 'score-med'; }
+  else { rating = 'Awareness'; colorClass = 'score-low'; }
+  
+  document.getElementById('results').style.display = 'block';
+  document.getElementById('score').innerHTML = `<span class="${colorClass}">${score}/100</span>`;
+  document.getElementById('rating').innerHTML = `<p>Maturity Stage: <strong>${rating}</strong></p>`;
+  
+  const gaps = [];
+  if (data < 4) gaps.push('Improve data quality and governance');
+  if (tech < 4) gaps.push('Upgrade infrastructure for AI workloads');
+  if (skills < 4) gaps.push('Hire or train AI/ML talent');
+  if (leadership < 4) gaps.push('Strengthen executive AI sponsorship');
+  if (budget < 4) gaps.push('Allocate dedicated AI budget');
+  if (currentAI === 'none') gaps.push('Start with pilot AI project');
+  
+  document.getElementById('gaps').innerHTML = gaps.length > 0 
+    ? gaps.map(g => `<p>🎯 ${g}</p>`).join('')
+    : '<p>✅ Organization is AI-ready</p>';
+  
+  const roadmap = [
+    { phase: 'Month 1-3', items: ['AI strategy workshop', 'Data audit', 'Skill gap analysis'] },
+    { phase: 'Month 4-6', items: ['Pilot project launch', 'Infrastructure setup', 'Team training'] },
+    { phase: 'Month 7-12', items: ['Scale successful pilots', 'ML ops implementation', 'Measure ROI'] }
+  ];
+  
+  document.getElementById('roadmap').innerHTML = roadmap.map(r => `
+    <h4>${r.phase}</h4>
+    <ul>${r.items.map(i => `<li>${i}</li>`).join('')}</ul>
+  `).join('');
+  
+  const costs = { '1-10': '$10K-30K', '11-50': '$30K-80K', '51-200': '$80K-200K', '201-1000': '$200K-500K', '1000+': '$500K+' };
+  document.getElementById('investment').innerHTML = `
+    <p>Estimated AI implementation investment: <strong>${costs[size] || '$50K-150K'}</strong></p>
+    <p>Based on ${size} employees, ${industry} industry</p>
+  `;
+}
+
+function reset() {
+  document.getElementById('results').style.display = 'none';
+  document.querySelectorAll('select').forEach(s => s.selectedIndex = 0);
+}
+</script>
+</body>
+</html>
