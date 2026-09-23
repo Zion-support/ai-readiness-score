@@ -1,15 +1,10 @@
-# 📐 Zion App Network — Interlinks
+# AI Readiness Score
 
-**ai-readiness-score** is part of the Zion Tech Group app network (630+ apps).
+Organizational AI maturity scorecard.
 
-- 🗃️ [Master Index](https://github.com/Zion-support/zion-network/blob/main/APPS_NETWORK.md)
-- 🗂️ Category: [Business Tools & Calculators](https://github.com/Zion-support/zion-network/blob/main/network/business-tools-calculators.md)
+## Network
+- 📚 Master catalog: [zion-app-network/CATALOG.md](https://github.com/Zion-support/zion-app-network/blob/main/CATALOG.md)
+- Hubs: [zion-app-network](https://github.com/Zion-support/zion-app-network) · [zion-tools](https://github.com/Zion-support/zion-tools)
+- Related: [ai-readiness-assessment](https://github.com/Zion-support/ai-readiness-assessment) · [zion-ai-readiness-quiz](https://github.com/Zion-support/zion-ai-readiness-quiz) · [zion-data-readiness-audit](https://github.com/Zion-support/zion-data-readiness-audit) · [ai-assessment-engine](https://github.com/Zion-support/ai-assessment-engine)
 
-## Related apps
-- [ai-readiness-assessment](https://github.com/Zion-support/ai-readiness-assessment) — scored AI readiness assessment
-- [roi-calculator](https://github.com/Zion-support/roi-calculator) — AI ROI calculator
-- [ai-roi-calculator](https://github.com/Zion-support/ai-roi-calculator) — AI ROI & payback
-- [tech-stack-recommender](https://github.com/Zion-support/tech-stack-recommender) — tech stack recommendations
-
----
-📐 [Network Index](https://github.com/Zion-support/zion-network/blob/main/APPS_NETWORK.md) · [Status](https://zion-support.github.io/zion-status/) · [Plans](https://zion-support.github.io/zion-plans/) · [Portal](https://zion-support.github.io/zion-portal/)
+*Zion Tech Group · [ziontechgroup.com](https://ziontechgroup.com)*
